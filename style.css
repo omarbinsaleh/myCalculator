@@ -1,0 +1,126 @@
+.ce {
+    display: none;
+}
+
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    min-height: 100vh;
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(124, 141, 141);
+}
+
+.container {
+    padding: 0.2rem;
+    /* min-height: 100%; */
+    
+    height: 100vh;
+    /* min-width: 100%; */
+    max-width: 800px;
+    width: 100%;
+    border: 1px solid green;
+    display: grid;
+    grid-auto-rows: 20% auto;
+    row-gap: 10px;
+}
+
+.screen {
+    border: 1px solid blue;
+    display: grid;
+    grid-auto-rows: 60% auto;
+    background-color: white;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+.previous-result {
+    display: grid;
+    place-content: center end;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.screen input {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+
+}
+
+.screen input::placeholder {
+    font-size: 2.5rem;
+    text-align: right;
+    color: green;
+}
+
+.calculator-body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    border: 1px solid red;
+}
+
+button {
+    font-size: 2rem;
+    border: 1px solid green;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    cursor: pointer;
+}
+
+.bg-gray{
+    background-color: rgb(201, 201, 201);
+}
+
+.bg-blue{
+    background-color: rgb(69, 69, 255);
+    color: white;
+}
+
+/* .bg-white {
+    background-color: white;
+}
+
+.bg-gray {
+    background-color: gray;
+} */
+
+/* .bg-blue {
+    background-color: rgb(69, 69, 255);
+} */
+
+.equal:disabled {
+    background-color: transparent;
+}
+
+.operator:disabled {
+    background-color: transparent;
+    color: white;
+}
+
+.equal:active{
+    background-color: rgb(69, 69, 255);
+}
+
+.operator:active {
+    background-color: rgb(201, 201, 201);
+}
