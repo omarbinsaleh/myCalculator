@@ -124,3 +124,8 @@ button {
 .operator:active {
     background-color: rgb(201, 201, 201);
 }
+
+button:active {
+    opacity: 0.7;
+}
+

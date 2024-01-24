@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let previousResult = document.querySelector('.previous-result');
     let inputAndResult = document.querySelector('.input-and-result');
-    
+
     let input = inputAndResult.value;
     let result = 0;
 
@@ -25,12 +25,12 @@ document.addEventListener('DOMContentLoaded', function () {
     let userName = prompt("You Name Please?");
     alert(`Hello ${userName.toUpperCase()}, Welcome!!. Let's do some interesting calculation!`);
     document.querySelector('title').textContent = `Calculator - ${userName.toUpperCase()}!`;
-   
+
     // FUNCTION TO TAKE INPUT FORM THE USERS:
     function takeInput(button) {
 
         // when users provide their first input for a new calculation:
-        if(count === 0) {
+        if (count === 0) {
             input = '';
             inputAndResult.placeholder = '';
         }
@@ -71,21 +71,21 @@ document.addEventListener('DOMContentLoaded', function () {
         inputAndResult.placeholder = '';
 
         // loop through the updated array and display the rest of the input element in the screen:
-        aryInput.forEach(function(item, index) {
+        aryInput.forEach(function (item, index) {
             input += item;
             inputAndResult.placeholder += item;
 
         });
 
         // when there is no element left any more in the input array for the further calculation:
-        if(aryInput.length == 0) {
+        if (aryInput.length == 0) {
             inputAndResult.placeholder = '';
             input = '';
 
             // disable the Equal button:
             buttonEqual.disabled = true;
             // disable all the operator buttons:
-            buttonOperators.forEach(function(button) {
+            buttonOperators.forEach(function (button) {
                 button.disabled = true;
             });
         };
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
         //display the final result to the screen:
         inputAndResult.placeholder = finalResult;
         result = finalResult;
-        input ='';
+        input = '';
 
         // print out the final result to the console:
         console.log(finalResult);
@@ -119,15 +119,15 @@ document.addEventListener('DOMContentLoaded', function () {
     buttonEqual.disabled = true;
 
     // by default, all the operator button should be disabled:
-    buttonOperators.forEach(function(button) {
+    buttonOperators.forEach(function (button) {
         button.disabled = true;
     });
 
 
     // added and onlcick event handler to the parenthesis buttons:
     buttonParenthesis.forEach(button => {
-        button.onclick = function() {
-            
+        button.onclick = function () {
+
             // activate the Equal button:
             buttonEqual.disabled = false;
 
@@ -136,22 +136,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // hide the AC button:
             buttonAC.style.display = "none";
-            
+
             // display the CE button:
             buttonCE.style.display = "block";
-        };            
+        };
     });
 
 
     // added an onclick event handler to all the digit buttons:
     buttonNumbers.forEach(button => {
-        button.onclick = function() {
+        button.onclick = function () {
 
             // activate the Equal button:
             buttonEqual.disabled = false;
 
             // activate all the operator buttons:
-            buttonOperators.forEach(function(button) {
+            buttonOperators.forEach(function (button) {
                 button.disabled = false;
             });
 
@@ -163,12 +163,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // hide the AC button:
             buttonAC.style.display = "none";
-        };      
+        };
     });
 
     // added an onclick event handler to the operator:
     buttonOperators.forEach(button => {
-        button.onclick = function() {
+        button.onclick = function () {
 
             // activate the Equal button:
             buttonEqual.disabled = false;
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // added an onclick event handler to the equal button:
-    buttonEqual.onclick = function() {
+    buttonEqual.onclick = function () {
         claculateResult();
 
         // display the AC button:
@@ -198,14 +198,14 @@ document.addEventListener('DOMContentLoaded', function () {
         buttonEqual.disabled = true;
 
         // disable all the operator button:
-        buttonOperators.forEach(function(button) {
+        buttonOperators.forEach(function (button) {
             button.disabled = true;
         })
     };
 
     // added an onclick enent handler to the AC button:
-    buttonAC.onclick = function() {
-        
+    buttonAC.onclick = function () {
+
         input = 0;
         inputAndResult.placeholder = 0;
         count = 0;
@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     // added an onclick event handler to the CE button:
-    buttonCE.onclick = function() {
+    buttonCE.onclick = function () {
         clearElement();
     };
 
